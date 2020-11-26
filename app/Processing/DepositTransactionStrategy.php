@@ -51,8 +51,7 @@ class DepositTransactionStrategy implements TransactionStrategyInterface
             $transaction->receiver->balance += $transaction->amount;
 
             if (!$transaction->receiver->save()) {
-                Log::error("Couldn't update user balance", $logContext);
-                DB::rollBack();
+                throw new TransactionException('Couldn\'t update user balance', $logContext);
             }
 
             DB::commit();

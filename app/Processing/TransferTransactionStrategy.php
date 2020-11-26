@@ -38,6 +38,7 @@ class TransferTransactionStrategy implements TransactionStrategyInterface
             if (!$transaction->save()) {
                 throw new TransactionException('Couldn\'t create a transaction', $logContext);
             }
+
             $this->createUserOperation($transaction->sender, $transaction);
             $this->createUserOperation($transaction->receiver, $transaction);
             DB::commit();

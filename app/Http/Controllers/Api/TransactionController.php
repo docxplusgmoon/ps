@@ -86,7 +86,6 @@ class TransactionController extends Controller
             }
 
             $transaction = $processing->makeTransaction($transaction);
-
         } catch (TransactionException $e) {
             return response()->json([
                 'status'  => 'error',
