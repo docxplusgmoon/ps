@@ -15,6 +15,10 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller;
 
+/**
+ * Class TransactionController
+ * @package App\Http\Controllers\Api
+ */
 class TransactionController extends Controller
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
@@ -43,8 +47,8 @@ class TransactionController extends Controller
         } catch (TransactionException $e) {
             return response()->json([
                 'status'  => 'error',
-                'message' => 'Couldn\'t make deposit. Please, try again later.'
-            ], 500);
+                'message' => $e->getMessage(),
+            ], 422);
         }
 
         return response()->json([
