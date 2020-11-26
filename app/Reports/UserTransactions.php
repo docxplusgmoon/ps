@@ -15,7 +15,7 @@ class UserTransactions
     /**
      * Rows number for page
      */
-    const PAGE_SIZE = 1;
+    const PAGE_SIZE = 20;
 
     /**
      * @param User $user
