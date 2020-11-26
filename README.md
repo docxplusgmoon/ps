@@ -16,7 +16,8 @@
 # Nginx
 Актуальный конфиг для nginx такой:
 
-`server {
+`
+server {
     listen 80;
     server_name payment-system.loc;
     root /home/docx/PhpstormProjects/ps/public;
