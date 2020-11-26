@@ -16,7 +16,9 @@
 # Nginx
 Актуальный конфиг для nginx такой:
 
-`
+```
+
+
 server {
     listen 80;
     server_name payment-system.loc;
@@ -49,4 +51,4 @@ server {
         deny all;
     }
 }
-`
+```
