@@ -2,22 +2,17 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Exceptions\TransactionException;
 use App\Http\Requests\CreateCurrencyRateRequest;
-use App\Http\Requests\CreateUserRequest;
-use App\Http\Requests\DepositTransactionRequest;
-use App\Http\Requests\TransferTransactionRequest;
 use App\Models\CurrencyRate;
-use App\Models\Transaction;
-use App\Models\User;
-use App\Processing\Core;
-use App\Processing\DepositTransactionStrategy;
-use App\Processing\TransferTransactionStrategy;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller;
 
+/**
+ * Class CurrencyRateController
+ * @package App\Http\Controllers\Api
+ */
 class CurrencyRateController extends Controller
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
